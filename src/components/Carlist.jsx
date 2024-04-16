@@ -56,9 +56,10 @@ export default function Carlist() {
     const gridRef = useRef();
 
     const deleteCar = (params) => {
+        console.log("params.data: ", params.data)
         console.log("params.data._links.car.href = " + params.data._links.car.href);
         console.log("id = " + gridRef.current.getSelectedNodes()[0].id);
-        if (window.confirm('Are you sure')) {
+        if (window.confirm('Are you sure you want to delete ' + params.data.model + "?")) {
             fetch(params.data._links.car.href, { method: 'DELETE' })
                 .then(response => {
                     if (response.ok) {

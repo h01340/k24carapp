@@ -61,7 +61,7 @@ export default function AddCar(props) {
         <DialogContent>
           <TextField
             margin="dense"
-            label="Branch"
+            label="Brand"
             value={car.brand}
             onChange={(e) => setCar({ ...car, brand: e.target.value })}
             fullWidth
